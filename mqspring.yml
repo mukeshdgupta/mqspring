@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mqspring
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: mqspring
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mqspring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mqspring
+  template:
+    metadata:
+      labels:
+        app: mqspring
+    spec:
+      containers:
+        - name: mqspring
+          image: 117134819170.dkr.ecr.ap-southeast-2.amazonaws.com/mqspring:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
