@@ -23,6 +23,7 @@ public class MqspringApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MqspringApplication.class, args);
 	}
+	
 		@GetMapping("send")
     String send(){
     try{
@@ -32,6 +33,7 @@ public class MqspringApplication {
         ex.printStackTrace();
         return "FAIL";
     }
+    
     }
      @GetMapping("recv")
     String recv(){
