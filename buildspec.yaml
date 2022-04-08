@@ -22,7 +22,6 @@ phases:
     commands:
       - docker build --tag $REPOSITORY_URI:$TAG .
       - echo Scan the image with trivy
-   
       - echo trivy scan completed on `date`
       - trivy image $REPOSITORY_URI:$TAG
 
