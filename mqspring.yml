@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: mqspring
-          image: 117134819170.dkr.ecr.ap-southeast-2.amazonaws.com/mqspring:latest
+          image: CONTAINER_IMAGE
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
