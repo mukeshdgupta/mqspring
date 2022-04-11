@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: mqspring
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mqspring
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: mqspring
-          image: CONTAINER_IMAGE
-          imagePullPolicy: IfNotPresent
+          image: 117134819170.dkr.ecr.ap-southeast-2.amazonaws.com/mqspring:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
